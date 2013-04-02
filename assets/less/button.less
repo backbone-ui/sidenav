@@ -1,0 +1,25 @@
+/* usage: .button(black, #fff, #ccc, #fff, 5px, 1em, auto, auto, auto, auto); */
+                                     
+.button(@bgcolor:black, @color:#fff, @hover:#ccc, @hoverfont:#fff, @radius:5px, @font:1em, @width:auto, @height:auto, @margin:auto, @padding:auto ) {
+	width:@width;
+	height:@height;
+	background:@bgcolor; 
+	display:inline-block; 
+	padding:@padding; 
+	color:@color; 
+	text-decoration:none;
+	border-radius:@radius;
+	-moz-border-radius:@radius; 
+	-webkit-border-radius:@radius;
+	position: relative;
+	cursor: pointer;
+	text-align:center;
+	
+	&:visited {
+	}
+	
+	&:hover {
+	background:(@hover);
+	color:(@hoverfont);
+	}
+}	

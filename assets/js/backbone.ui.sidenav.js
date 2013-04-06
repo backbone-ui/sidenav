@@ -7,7 +7,7 @@ Backbone.UI.Sidenav = Backbone.View.extend({
 	},
 
 	toggle: function() {
-		$(this.el).toggleClass('shift');
+		$(this.el).toggleClass('ui-sidenav-shift');
 	}
 
 });

@@ -1,0 +1,10 @@
+{
+  "name": "backbone.ui.sidenav",
+  "version": "0.1.0",
+  "main": ["./assets/js/backbone.ui.sidenav.js"],
+  "dependencies": { 
+	  "backbone" : "0.9.10", 
+	  "underscore" : "1.4.4", 
+	  "jquery" : "1.8.3"
+  }
+}

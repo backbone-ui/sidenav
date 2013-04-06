@@ -1,12 +1,8 @@
-* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-.shift {
-  margin-left: 80% !important;
+/* variables */
+.ui-sidenav-shift {
+  margin-left: 80%;
 }
-.no-scroll {
-  overflow: hidden;
-  -webkit-overflow-scrolling: none;
-}
-.transition1s {
+.ui-sidenav-transition {
   -webkit-transition: all 0.3s ease-out 0;
   -moz-transition: all 0.3s ease-out 0;
   -o-transition: all 0.3s ease-out 0;
@@ -15,19 +11,7 @@
   transition-timing-function: ease-out;
   transition-delay: 0;
 }
-* {
-  margin: 0;
-  padding: 0;
-}
-html,
-body {
-  width: 100%;
-  height: 100%;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 95%;
-  line-height: 160%;
-  background-color: #ffffff;
-}
+.ui-sidenav,
 .container {
   position: absolute;
   width: 100%;
@@ -42,16 +26,18 @@ body {
   transition-timing-function: ease-out;
   transition-delay: 0;
 }
-header.top {
+.ui-sidenav header,
+.container header {
   position: fixed;
   top: 0;
   width: 100%;
   height: 60px;
-  background-color: #b4b4b4;
+  background-color: #cccccc;
   z-index: 99;
-  border-bottom: 2px solid #b4b4b4;
+  border-bottom: 2px solid #cccccc;
 }
-header.top .container h1 {
+.ui-sidenav header .container h1,
+.container header .container h1 {
   float: left;
   height: 50px;
   padding: 15px 0 0 55px;
@@ -61,55 +47,56 @@ header.top .container h1 {
   background-size: contain;
   background-position: left 0px;
 }
-header.top .container .btn-collapse {
+.ui-sidenav header .container .btn-collapse,
+.container header .container .btn-collapse {
   display: none;
 }
-header.top .container .btn-collapse i {
+.ui-sidenav header .container .btn-collapse i,
+.container header .container .btn-collapse i {
   font-size: 2em;
 }
-header.top nav {
+.ui-sidenav header nav,
+.container header nav {
   position: relative;
   margin: 0 auto;
   text-align: left;
   z-index: 10;
 }
-header.top nav ul {
+.ui-sidenav header nav ul,
+.container header nav ul {
   padding: 20px 0;
 }
-header.top nav ul li {
+.ui-sidenav header nav ul li,
+.container header nav ul li {
   display: inline;
   padding: 2%;
 }
-header.top nav ul li a:link,
-header.top nav ul li a:visited {
+.ui-sidenav header nav ul li a:link,
+.container header nav ul li a:link,
+.ui-sidenav header nav ul li a:visited,
+.container header nav ul li a:visited {
   display: inline-block;
   font-size: 1.2em;
   color: #ffffff;
   text-decoration: none;
 }
-header.top nav ul li a:hover,
-header.top nav ul li a.active {
-  color: #e21e26;
-}
-#main {
-  position: relative;
-  width: 100%;
-  color: #000000;
-  top: 60px;
-  padding: 10px;
-  z-index: 99;
+.ui-sidenav header nav ul li a:hover,
+.container header nav ul li a:hover,
+.ui-sidenav header nav ul li a.active,
+.container header nav ul li a.active {
+  color: #ff0000;
 }
 @media (max-width: 768px) {
-  header.top {
+  .ui-sidenav header {
     position: absolute;
   }
-  header.top .container {
+  .ui-sidenav header .container {
     position: relative;
   }
-  header.top .container h1 {
+  .ui-sidenav header .container h1 {
     float: none;
   }
-  header.top .container .btn-collapse {
+  .ui-sidenav header .container .btn-collapse {
     display: block;
     position: absolute;
     top: 10px;
@@ -121,28 +108,28 @@ header.top nav ul li a.active {
     background-size: contain;
     cursor: pointer;
   }
-  header.top nav {
+  .ui-sidenav header nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 80%;
     height: 100%;
-    background-color: #b4b4b4;
+    background-color: #cccccc;
     z-index: -1;
   }
-  header.top nav ul li {
+  .ui-sidenav header nav ul li {
     display: block;
     padding: 2%;
   }
-  header.top nav ul li a:link,
-  header.top nav ul li a:visited {
+  .ui-sidenav header nav ul li a:link,
+  .ui-sidenav header nav ul li a:visited {
     display: block;
     font-size: 1.2em;
     color: #ffffff;
     text-decoration: none;
   }
-  header.top nav ul li a:hover,
-  header.top nav ul li a.active {
-    color: #e21e26;
+  .ui-sidenav header nav ul li a:hover,
+  .ui-sidenav header nav ul li a.active {
+    color: #ff0000;
   }
 }

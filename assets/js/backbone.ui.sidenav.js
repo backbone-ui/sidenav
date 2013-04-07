@@ -18,26 +18,28 @@
 			"click .ui-sidenav-control": "toggle",
 		},
 		
-		initialize: function() {
-			$(window).bind("resize", _.bind(this.resize, this));
-		},
+		/*initialize: function() {
+			if( app && app.state && !app.state.mobile ){ 
+				$(window).bind("resize", _.bind(this.resize, this));
+			}
+		},*/
 		
 		toggle: function() {
 			$(this.el).toggleClass('ui-sidenav-active');
-		},
+		}
 		
-		resize: function() {
+		/*resize: function() {
 			// $(this.el).removeClass('ui-sidenav-active');
 			
-		}, 
+		}, */
 		
-		remove: function() {
+		/*remove: function() {
 			// unbind the namespaced 
 			$(window).unbind("resize");
 	
 			// don't forget to call the original remove() function
 			Backbone.View.prototype.remove.call(this);
-		}
+		}*/
 	});
 	
 })(this._, this.Backbone);

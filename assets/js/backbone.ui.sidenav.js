@@ -15,24 +15,13 @@
 	Backbone.UI.Sidenav = Backbone.View.extend({
 		
 		events: {
-			"click #nav-collapse": "toggle"
+			"click .ui-sidenav-control": "toggle"
 		},
 	
 		toggle: function() {
-			$(this.el).toggleClass('shift');
+			$(this.el).toggleClass('ui-sidenav-active');
 		}
 	
 	});
 	
-<<<<<<< HEAD
-	events: {
-		"click #nav-collapse": "toggle"
-	},
-
-	toggle: function() {
-		$(this.el).toggleClass('ui-sidenav-shift');
-	}
-=======
->>>>>>> 38bb00384360de81eb05c94a4170f0137bef0060
-
 })(this._, this.Backbone);

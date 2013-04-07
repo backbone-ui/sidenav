@@ -15,13 +15,29 @@
 	Backbone.UI.Sidenav = Backbone.View.extend({
 		
 		events: {
-			"click .ui-sidenav-control": "toggle"
+			"click .ui-sidenav-control": "toggle",
 		},
-	
+		
+		initialize: function() {
+			$(window).bind("resize", _.bind(this.resize, this));
+		},
+		
 		toggle: function() {
 			$(this.el).toggleClass('ui-sidenav-active');
-		}
+		},
+		
+		resize: function() {
+			// $(this.el).removeClass('ui-sidenav-active');
+			
+		}, 
+		
+		remove: function() {
+			// unbind the namespaced 
+			$(window).unbind("resize");
 	
+			// don't forget to call the original remove() function
+			Backbone.View.prototype.remove.call(this);
+		}
 	});
 	
 })(this._, this.Backbone);

@@ -10,36 +10,23 @@
 	
 	// fallbacks
 	if( _.isUndefined( Backbone.UI ) ) Backbone.UI = {};
+	// Support backbone app (if available)
+	var View = ( typeof APP != "undefined" && !_.isUndefined( APP.View) ) ? APP.View : Backbone.View;
 	
-	
-	Backbone.UI.Sidenav = Backbone.View.extend({
+	Backbone.UI.Sidenav = View.extend({
 		
 		events: {
 			"click .ui-sidenav-control": "toggle",
 		},
 		
-		/*initialize: function() {
-			if( app && app.state && !app.state.mobile ){ 
-				$(window).bind("resize", _.bind(this.resize, this));
-			}
-		},*/
-		
 		toggle: function() {
 			$(this.el).toggleClass('ui-sidenav-active');
+		}, 
+		
+		resize: function() {
+			$(this.el).removeClass('ui-sidenav-active');
 		}
 		
-		/*resize: function() {
-			// $(this.el).removeClass('ui-sidenav-active');
-			
-		}, */
-		
-		/*remove: function() {
-			// unbind the namespaced 
-			$(window).unbind("resize");
-	
-			// don't forget to call the original remove() function
-			Backbone.View.prototype.remove.call(this);
-		}*/
 	});
 	
 })(this._, this.Backbone);

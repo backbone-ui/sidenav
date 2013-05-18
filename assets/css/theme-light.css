@@ -1,0 +1,44 @@
+a:link, a:visited {
+	color: #000;
+}
+
+a:hover, a.active {
+	color: #f00; 
+}
+
+.ui-sidenav header .container {
+	background-color: #f1f1f1;
+	/* border-bottom: 1px solid #000; */
+}
+
+.ui-sidenav header .container h1.logo {
+	float: left;
+	width: 200px;
+	margin: 15px;
+	padding: 0;
+	background-image: url(../img/logo.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: left 0px;
+	cursor: pointer;
+}
+
+.ui-sidenav header .container h1.logo a {
+	display: block;
+	left: 0;
+	height: 50px;
+}
+
+.ui-sidenav header nav ul li:first-child { 
+	padding-left: 10px;
+}
+
+@media (max-width: 768px) {
+
+.ui-sidenav header nav {
+	/* background-color: #ccc; */
+}
+
+}
+
+

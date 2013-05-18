@@ -14,7 +14,6 @@
 	width: 100%;
 	height: 100%;
 	top: 0;
-	background-color: #fff;	
 	z-index: 1;
 	.ui-sidenav-transition;
 
@@ -23,7 +22,6 @@
 		top: 0;
 		width: 100%;
 		height: 60px;
-		background-color: @gray-light;
 		z-index: 99;
 		
 		
@@ -31,21 +29,9 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			background-color: #fff;	
+			background-color: #fff;
 			z-index: 1;
-			border-bottom: 2px solid @gray-light;
-			
-			
-			h1 {
-				/* float: left; 
-				height:50px; 
-				padding: 15px 0 0 55px;
-				margin:10px;
-				background-image: url(../img/logo.png);
-				background-repeat: no-repeat;
-				background-size: contain;
-				background-position: left 0px; */
-			}
+			border-bottom: 1px solid @gray-light;
 			
 			.ui-sidenav-control {
 				display: none;
@@ -64,16 +50,15 @@
 				li {
 					display: inline;
 					padding: 2%;
-				
+					
 					a:link, a:visited {
 						display: inline-block;
 						font-size: 1.2em;
-						color: @black; 
 						text-decoration: none;
 					}
 					
 					a:hover, a.active {
-						color: @red;
+						
 					}
 				}
 			}
@@ -87,11 +72,9 @@
 	.ui-sidenav {
 		header {
 			position: absolute;
-			background-color: @white;
 			
 			.container {
 				position: relative;
-				background-color: @white;
 				
 				h1 {
 					float: none;
@@ -120,7 +103,6 @@
 				background-color: @gray-lightest;
 				z-index:-1;
 				
-				
 				ul {
 				
 					li {
@@ -130,12 +112,11 @@
 						a:link, a:visited {
 							display: block;
 							font-size: 1.2em;
-							color: @black; 
 							text-decoration: none;
 						}
 					
 						a:hover, a.active {
-							color: @red;
+							
 						}
 					}
 				}

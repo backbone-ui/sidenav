@@ -17,6 +17,10 @@
 		
 		el : '.ui-sidenav',
 		
+		options : {
+			navTag : "nav"
+		},
+		
 		events: {
 			"click .ui-sidenav-control": "toggle",
 		},
@@ -36,6 +40,8 @@
 				// add it to the el
 				var $el = $('<div class="container"><a class="ui-sidenav-control"></a></div>');
 				$(this.el).find("header").prepend($el);
+				// console.log($( this.options.navContainerTag ));
+				$( this.options.navTag ).addClass("ui-sidenav-nav");
 			}
 		}
 		

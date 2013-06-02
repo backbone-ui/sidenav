@@ -1,12 +1,13 @@
 @import "variables.less";
 @import "transition.less";
 
-.ui-sidenav-active { 
-	margin-left: 80%;
-}
-
 .ui-sidenav-transition {
 	.transition(all, .3s, ease-out, 0);
+}
+
+.ui-sidenav-active .ui-sidenav-main { 
+	/*margin-left: 80%;*/
+	-webkit-transform: translateX(80%);
 }
 
 .ui-sidenav {
@@ -15,9 +16,8 @@
 	height: 100%;
 	top: 0;
 	z-index: 1;
-	.ui-sidenav-transition;
 
-	header {
+	> header {
 		position: fixed;
 		top: 0;
 		width: 100%;
@@ -64,13 +64,18 @@
 			}
 		}
 	}
+	
+	.ui-sidenav-main { 
+		.ui-sidenav-transition;
+		z-index: 99;
+	}
 
 }
 
 @media (max-width: 768px) {
 	
 	.ui-sidenav {
-		header {
+		> header {
 			position: absolute;
 			
 			.container {

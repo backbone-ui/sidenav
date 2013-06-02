@@ -15,6 +15,8 @@
 	
 	Backbone.UI.Sidenav = View.extend({
 		
+		el : '.ui-sidenav',
+		
 		events: {
 			"click .ui-sidenav-control": "toggle",
 		},

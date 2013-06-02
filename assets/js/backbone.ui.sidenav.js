@@ -27,6 +27,16 @@
 		
 		resize: function() {
 			$(this.el).removeClass('ui-sidenav-active');
+		},
+		
+		postRender: function() {
+			// check if we have the sidenav control
+			var control = $(this.el).find(".ui-sidenav-control");
+			if( !control.length ) { 
+				// add it to the el
+				var $el = $('<div class="container"><a class="ui-sidenav-control"></a></div>');
+				$(this.el).find("header").prepend($el);
+			}
 		}
 		
 	});

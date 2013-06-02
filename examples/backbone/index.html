@@ -28,15 +28,14 @@ html, body {
 	overflow: hidden;
 }
 
-#main {
+.main {
 	position: relative;
 	top: 60px;
 	width: 100%;
 	height: 100%;
 	color: @black;
-	background-color: #fff;	
+	background-color: #fff;
 	padding: 10px;
-	z-index: 99;
 }
 
 a:link, a:visited {
@@ -44,7 +43,7 @@ a:link, a:visited {
 }
 
 a:hover, a.active {
-	color: #f00; 
+	color: #f00;
 }
 
 .ui-sidenav header .container {
@@ -70,7 +69,7 @@ a:hover, a.active {
 	height: 50px;
 }
 
-.ui-sidenav header nav ul li:first-child { 
+.ui-sidenav header nav ul li:first-child {
 	padding-left: 10px;
 }
 
@@ -86,22 +85,22 @@ a:hover, a.active {
 </head>
 <body>
 <div class="ui-sidenav">
-  <header>
-    <div class="container"> 
-    	<a class="ui-sidenav-control"></a> 
-    </div>
-    <nav class="clearfix">
-      <ul>
-        <li><a href="">Nav item 1</a></li>
-        <li><a href="">Nav item 2</a></li>
-        <li><a href="">Nav item 3</a></li>
-        <li><a href="">Nav item 4</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div id="main">
-    <h1>Main</h1>
-  </div>
+	<header>
+		<div class="container">
+			<a class="ui-sidenav-control"></a>
+		</div>
+		<nav class="ui-sidenav-nav clearfix">
+		<ul>
+			<li><a href="">Nav item 1</a></li>
+			<li><a href="">Nav item 2</a></li>
+			<li><a href="">Nav item 3</a></li>
+			<li><a href="">Nav item 4</a></li>
+		</ul>
+		</nav>
+	</header>
+	<div class="main ui-sidenav-main">
+		<h1>Main</h1>
+	</div>
 </div>
 <script type="text/javascript" src="//rawgithub.com/commons/common.js/master/build/common-min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -112,9 +111,7 @@ a:hover, a.active {
 <script type="text/javascript" src="../../assets/js/backbone.ui.sidenav.js"></script>
 <script type="text/javascript">
 // instantiate view
-var view = new Backbone.UI.Sidenav({
-	el : 'body > .ui-sidenav'
-});
+var view = new Backbone.UI.Sidenav();
 
 </script>
 </body>

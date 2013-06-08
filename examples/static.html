@@ -11,6 +11,7 @@
 <!-- link type="text/css" href="../assets/less/backbone.ui.sidenav.less" media="screen" rel="stylesheet/less">
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.3.3/less.min.js"></script -->
 
+
 <style>
 
 * {
@@ -29,7 +30,7 @@ html, body {
 
 .main {
 	position: relative;
-	top: 60px;
+	top: 45px;
 	width: 100%;
 	height: 100%;
 	color: @black;
@@ -45,9 +46,13 @@ a:hover, a.active {
 	color: #f00;
 }
 
+.ui-sidenav header {
+	border-bottom: 1px solid #000;
+}
+
 .ui-sidenav header .container {
 	/* background-color: #f1f1f1;  */
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #000; 
 }
 
 .ui-sidenav header .container h1.logo {
@@ -72,10 +77,25 @@ a:hover, a.active {
 	padding-left: 10px;
 }
 
+.ui-sidenav>header .ui-sidenav-nav ul {
+	padding-top: 5px;
+}
+
+.ui-sidenav>header .ui-sidenav-nav ul li a {
+	text-decoration: none;
+}
+
+
+
 @media (max-width: 768px) {
 
 .ui-sidenav header nav {
 	/* background-color: #ccc; */
+}
+
+.ui-sidenav header .container {
+	/* background-color: #f1f1f1;  */
+	border-bottom: 1px solid #000; 
 }
 
 }

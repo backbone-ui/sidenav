@@ -6,14 +6,35 @@
 // Licensed under the MIT license:
 // http://makesites.org/licenses/MIT
 
-(function(_, Backbone) {
+(function (lib) {
+
+	//"use strict";
+
+	// Support module loaders
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define(['jquery', 'underscore', 'backbone'], lib);
+	} else if ( typeof module === "object" && module && typeof module.exports === "object" ){
+		// Expose as module.exports in loaders that implement CommonJS module pattern.
+		module.exports = lib;
+	} else {
+		// Browser globals
+		lib(window.jQuery, window._, window.Backbone);
+	}
+
+}(function ($, _, Backbone) {
+
+	// support for Backbone APP() view if available...
+	var isAPP = ( typeof APP !== "undefined" && typeof APP.View !== "undefined" );
+	var View = ( isAPP ) ? APP.View : Backbone.View;
+
 
 	// fallbacks
 	if( _.isUndefined( Backbone.UI ) ) Backbone.UI = {};
 	// Support backbone app (if available)
 	var View = ( typeof APP != "undefined" && !_.isUndefined( APP.View) ) ? APP.View : Backbone.View;
 
-	Backbone.UI.Sidenav = View.extend({
+	var Sidenav = View.extend({
 
 		el : '.ui-sidenav',
 
@@ -49,4 +70,22 @@
 
 	});
 
-})(this._, this.Backbone);
+
+	// If there is a window object, that at least has a document property...
+	if ( typeof window === "object" && typeof window.document === "object" ) {
+		// update APP namespace
+		if( isAPP ){
+			APP.UI = APP.UI ||{};
+			APP.UI.Sidenav = Sidenav;
+			// save namespace
+			window.APP = APP;
+		}
+		// update Backbone namespace regardless
+		Backbone.UI = Backbone.UI ||{};
+		Backbone.UI.Sidenav = Sidenav;
+		window.Backbone = Backbone;
+	}
+
+}));
+
+

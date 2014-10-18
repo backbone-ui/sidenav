@@ -73,6 +73,10 @@
 	});
 
 
+	// update Backbone namespace regardless
+	Backbone.UI = Backbone.UI ||{};
+	Backbone.UI.Sidenav = Sidenav;
+
 	// If there is a window object, that at least has a document property...
 	if ( typeof window === "object" && typeof window.document === "object" ) {
 		// update APP namespace
@@ -82,12 +86,11 @@
 			// save namespace
 			window.APP = APP;
 		}
-		// update Backbone namespace regardless
-		Backbone.UI = Backbone.UI ||{};
-		Backbone.UI.Sidenav = Sidenav;
 		window.Backbone = Backbone;
 	}
 
+	// for module loaders:
+	return Sidenav;
+
+
 }));
-
-

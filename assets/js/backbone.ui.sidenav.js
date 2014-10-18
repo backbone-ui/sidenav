@@ -1,10 +1,12 @@
-// Backbone.js Sidenav extension
-//
-// Created by: Lyndel Thomas (@ryndel)
-// Source: https://github.com/backbone-ui/sidenav
-//
-// Licensed under the MIT license:
-// http://makesites.org/licenses/MIT
+/*
+ * Backbone UI: Sidenav
+ * Source: https://github.com/backbone-ui/sidenav
+ * Copyright © Makesites.org
+ *
+ * Initiated by Lyndel Thomas (@ryndel)
+ * Distributed through [Makesites.org](http://makesites.org)
+ * Released under the [MIT license](http://makesites.org/licenses/MIT)
+ */
 
 (function (lib) {
 

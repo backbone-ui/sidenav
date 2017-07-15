@@ -42,19 +42,28 @@
 
 		options : {
 			navEl : "nav",
-			mainEl : ".main"
+			mainEl : ".main",
+			pageEl : "body"
 		},
 
 		events: {
 			"click .ui-sidenav-control": "toggle",
 		},
 
+		initialize: function( options ){
+			// extend options
+			options = options || {};
+			this.options = _.extend({}, this.options, options);
+			// continue...
+			View.prototype.initialize.call(this, options);
+		},
+
 		toggle: function() {
-			$(this.el).toggleClass('ui-sidenav-active');
+			$(this.options.pageEl).toggleClass('ui-sidenav-active');
 		},
 
 		resize: function() {
-			$(this.el).removeClass('ui-sidenav-active');
+			$(this.options.pageEl).removeClass('ui-sidenav-active');
 		},
 
 		postRender: function() {
@@ -62,12 +71,14 @@
 			var control = $(this.el).find(".ui-sidenav-control");
 			if( !control.length ) {
 				// add it to the el
-				var $el = $('<div class="container"><a class="ui-sidenav-control"></a></div>');
-				$(this.el).find("header").prepend($el);
-				// add relative classes to elements
-				$( this.options.navEl ).addClass("ui-sidenav-nav");
-				$( this.options.mainEl ).addClass("ui-sidenav-main");
+				var $el = $('<a class="ui-sidenav-control"></a>');
+				$(this.el).prepend($el);
 			}
+			// add relative classes to elements
+			$(this.el).find( this.options.navEl ).addClass("ui-sidenav-nav");
+			$( this.options.pageEl ).addClass("ui-sidenav-page");
+			console.log( this.options.mainEl );
+			$( this.options.mainEl ).addClass("ui-sidenav-main");
 		}
 
 	});

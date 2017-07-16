@@ -41,6 +41,7 @@
 		el : '.ui-sidenav',
 
 		options : {
+			effect: "reveal-left", // options: reveal-left, reveal-right, slide-left, slide-right
 			navEl : "nav",
 			mainEl : ".main",
 			pageEl : "body"
@@ -75,10 +76,12 @@
 				$(this.el).prepend($el);
 			}
 			// add relative classes to elements
-			$(this.el).find( this.options.navEl ).addClass("ui-sidenav-nav");
+			$(this.el).find( this.options.navEl ).addClass("ui-sidenav-nav").delay(2000).show();
 			$( this.options.pageEl ).addClass("ui-sidenav-page");
-			console.log( this.options.mainEl );
 			$( this.options.mainEl ).addClass("ui-sidenav-main");
+			// effect class
+			$( this.options.pageEl ).addClass("ui-sidenav-"+ this.options.effect );
+
 		}
 
 	});
